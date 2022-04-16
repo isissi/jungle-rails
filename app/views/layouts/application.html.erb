@@ -11,6 +11,13 @@
   <%= render 'layouts/top_nav' %>
 
   <main class="container">
+    <% if notice %>
+      <%= notice %>
+    <% end %>
+    
+    <% if alert %>
+      <%= alert %>
+    <% end %>
     <%= yield %>
   </main>
 
