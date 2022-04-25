@@ -35,7 +35,7 @@ RSpec.describe Product, type: :model do
         quantity: 20,
         category_id: @category.id
       )
-      expect(@product.errors.full_messages).to include("Price can't be blank")
+      expect(@product.errors.full_messages).to include("Price cents can't be blank")
     end
 
     it "should not save if no quantity is provided" do
