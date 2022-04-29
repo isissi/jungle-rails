@@ -29,7 +29,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate_with_credentials(email: params[:login][:email].downcase.strip,password:params[:login][:password])
+    user = User.authenticate_with_credentials(params[:login][:email], params[:login][:password])
+    
     if user 
       # Save the user.id in that user's session cookie:
       session[:user_id] = user.id.to_s
